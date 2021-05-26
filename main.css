@@ -8,6 +8,16 @@ body {
   font-family: "NEXON Lv1 Gothic OTF";
 }
 
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
 .underline-hover-btn {
   display: inline-block;
   padding: 1em 0;
