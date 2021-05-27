@@ -65,6 +65,12 @@ h1, h3{
   text-align: center;
 }
 
+.title{
+  padding-top: $side-padding/2;
+  padding-bottom: $side-padding/3;
+  color: $black-color;
+}
+
 // Nevigation
 #Nevigation{
   position: sticky;
@@ -78,13 +84,14 @@ h1, h3{
   font-size: $font-medium;
   .name{
     position: relative;
-    top: 25%;
+    top: 30%;
   }
   .menu button{
+    margin: $padding/2 $padding/2;
     font-size: $font-medium;
   }
 }
-.profile_btn{
+.home_btn{
   border: 1px solid $white-color;
   border-radius: 5%;
   &:hover{
@@ -93,8 +100,7 @@ h1, h3{
     color: $pink-color;
   }
 }
-.info_btn, .favorite_btn, .skills_btn, .project_btn{
-  margin: $padding/2 $padding/2;
+.profile_btn, .info_btn, .favorite_btn, .skills_btn, .project_btn{
   position: relative;
   &:hover{
     &:before{
@@ -127,10 +133,6 @@ header{
 }
 
 // Profile
-.title_profile{
-  padding-top: $side-padding/2;
-  color: $black-color;
-}
 .profile{
   display: flex;
   justify-content: space-evenly;
@@ -160,18 +162,15 @@ header{
 }
 
 // Info
-.title_info{
-  padding-top: $side-padding/2;
-  color: $black-color;
-}
 .info{
-  position: relative;
   margin: $padding $side-padding;
-  margin-left: $side-padding*1.5;
+  margin-left: $side-padding*2.5;
   text-align: center;
   line-height: 3;
   .birth{
     display: flex;
+    position: relative;
+    height: $side-padding/(1.5);
     span{
       flex: 1 1 20%;
       text-align: left;
@@ -183,6 +182,7 @@ header{
   }
   .univ{
     display: flex;
+    line-height: 1.5;
     span{
       flex: 1 1 20%;
       text-align: left;
@@ -198,6 +198,7 @@ header{
   }
   .contact{
     display: flex;
+    line-height: 3;
     span{
       flex: 1 1 20%;
       text-align: left;
@@ -210,14 +211,16 @@ header{
         text-decoration: none;
       }
       #email:hover{
-        background-color: $grey-dark-color;
         text-decoration: underline;
+        color: blue;
       }
       #instagram:hover{
         text-decoration: underline;
+        color: blue;
       }
-      #github:hover{
+      #git:hover{
         text-decoration: underline;
+        color: blue;
       }
     }
   }
@@ -225,7 +228,7 @@ header{
 
 @media screen and (max-width:768px){
   .profile{
-    margin: $padding $padding;
+    margin: $padding 0;
     border-radius: 0%;
     white-space: pre-line;
     .greeting{
@@ -233,7 +236,7 @@ header{
     }
   }
   .info{
-    margin: $padding 0;
+    margin: $padding $padding;
     .univ .item{
       white-space: pre-line;
     }

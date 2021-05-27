@@ -38,6 +38,12 @@ h1, h3 {
   text-align: center;
 }
 
+.title {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  color: #000000;
+}
+
 #Nevigation {
   position: -webkit-sticky;
   position: sticky;
@@ -57,30 +63,30 @@ h1, h3 {
 
 #Nevigation .name {
   position: relative;
-  top: 25%;
+  top: 30%;
 }
 
 #Nevigation .menu button {
+  margin: 10px 10px;
   font-size: 15px;
 }
 
-.profile_btn {
+.home_btn {
   border: 1px solid #ffffff;
   border-radius: 5%;
 }
 
-.profile_btn:hover {
+.home_btn:hover {
   opacity: 0.9;
   background-color: white;
   color: #ee88aa;
 }
 
-.info_btn, .favorite_btn, .skills_btn, .project_btn {
-  margin: 10px 10px;
+.profile_btn, .info_btn, .favorite_btn, .skills_btn, .project_btn {
   position: relative;
 }
 
-.info_btn:hover:before, .favorite_btn:hover:before, .skills_btn:hover:before, .project_btn:hover:before {
+.profile_btn:hover:before, .info_btn:hover:before, .favorite_btn:hover:before, .skills_btn:hover:before, .project_btn:hover:before {
   -webkit-transform: none;
           transform: none;
   opacity: 1;
@@ -88,7 +94,7 @@ h1, h3 {
           transition-duration: .4s;
 }
 
-.info_btn:before, .favorite_btn:before, .skills_btn:before, .project_btn:before {
+.profile_btn:before, .info_btn:before, .favorite_btn:before, .skills_btn:before, .project_btn:before {
   content: "";
   position: absolute;
   opacity: 0;
@@ -110,11 +116,6 @@ header {
   background: linear-gradient(#ee88aa, #F9F5F0);
   color: #ffffff;
   text-align: center;
-}
-
-.title_profile {
-  padding-top: 60px;
-  color: #000000;
 }
 
 .profile {
@@ -154,15 +155,9 @@ header {
   padding-top: 20px;
 }
 
-.title_info {
-  padding-top: 60px;
-  color: #000000;
-}
-
 .info {
-  position: relative;
   margin: 20px 120px;
-  margin-left: 180px;
+  margin-left: 300px;
   text-align: center;
   line-height: 3;
 }
@@ -171,6 +166,8 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  height: 80px;
 }
 
 .info .birth span {
@@ -191,6 +188,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  line-height: 1.5;
 }
 
 .info .univ span {
@@ -216,6 +214,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  line-height: 3;
 }
 
 .info .contact span {
@@ -238,21 +237,23 @@ header {
 }
 
 .info .contact .item #email:hover {
-  background-color: #909090;
   text-decoration: underline;
+  color: blue;
 }
 
 .info .contact .item #instagram:hover {
   text-decoration: underline;
+  color: blue;
 }
 
-.info .contact .item #github:hover {
+.info .contact .item #git:hover {
   text-decoration: underline;
+  color: blue;
 }
 
 @media screen and (max-width: 768px) {
   .profile {
-    margin: 20px 20px;
+    margin: 20px 0;
     border-radius: 0%;
     white-space: pre-line;
   }
@@ -260,7 +261,7 @@ header {
     margin-top: 4%;
   }
   .info {
-    margin: 20px 0;
+    margin: 20px 20px;
   }
   .info .univ .item {
     white-space: pre-line;
