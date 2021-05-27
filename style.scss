@@ -1,16 +1,19 @@
 // Color
 $black-color:#000000;
 $white-color:#ffffff;
+$grey-dark-color:#909090;
+$grey-light-color: #e0e0e0;
 $lavendar-color:#d0b3e6;
 $pink-color:#ee88aa;
-$coral-color:#f88379;
+$beige-color:#F9F5F0;
 $lemon-color:#fffaad;
-$brown-color:#b2876f;
+$brown-color:#bd8d73;
 
 // Size
 $padding:20px;
 $side-padding:120px;
-$profile-size:200px;
+$profile-size:250px;
+$img-size:100px;
 
 // Font-Size
 $font-huge:30px;
@@ -42,7 +45,7 @@ body{
   // background-attachment: fixed !important;
   // background-size: 100% !important;
   // background-position: center top !important;
-  color: $white-color;
+  // color: $white-color;
 }
 
 ul{
@@ -57,15 +60,12 @@ button{
   color: $white-color;
 }
 
-header{
+h1, h3{
   font-family: 'NEXON Lv2 Gothic Bold';
-  // position: relative;
-  // top: 10px;
-  padding: $side-padding 0;
-  background:linear-gradient($pink-color,$lavendar-color);
   text-align: center;
 }
 
+// Nevigation
 #Nevigation{
   position: sticky;
   top: 0;
@@ -76,9 +76,12 @@ header{
   background-color: $pink-color;
   color: $white-color;
   font-size: $font-medium;
-  &:in-range
   .name{
-    margin: $padding/2 $padding/2;
+    position: relative;
+    top: 25%;
+  }
+  .menu button{
+    font-size: $font-medium;
   }
 }
 .profile_btn{
@@ -105,6 +108,7 @@ header{
     position: absolute;
     opacity: 0;
     width: 100%;
+    top: 20px;
     height: 2px;
     left: 0;
     bottom: -0px;
@@ -114,38 +118,124 @@ header{
   }
 }
 
+// Header
+header{
+  padding: $side-padding 0;
+  background:linear-gradient($pink-color,$beige-color);
+  color: $white-color;
+  text-align: center;
+}
+
+// Profile
+.title_profile{
+  padding-top: $side-padding/2;
+  color: $black-color;
+}
 .profile{
   display: flex;
   justify-content: space-evenly;
-  align-content: space-around;
-  margin: 0 $side-padding;
-  background-color: $coral-color;
-  border-radius: 5% / 20%;
+  box-sizing: border-box;
+  margin: $padding $side-padding;
+  color: $black-color;
+  background-color: $beige-color;
+  border-radius: 5% / 15%;
   img{
     width: $profile-size;
     height: $profile-size;
     border-radius: 50%;
-    padding:$padding $padding;
+    padding:$padding*2 $padding;
   }
   .greeting{
-    margin-top: 4.5%;
+    margin-top: 10%;
     line-height: 1.2;
     text-align: center;
     .hello{
       font-family: 'NEXON Lv2 Gothic Bold';
     }
     .detail{
-      border-top: 1px solid $white-color;
+      border-top: 1px solid $grey-dark-color;
       padding-top: $padding;
     }
   }
 }
 
+// Info
+.title_info{
+  padding-top: $side-padding/2;
+  color: $black-color;
+}
+.info{
+  position: relative;
+  margin: $padding $side-padding;
+  margin-left: $side-padding*1.5;
+  text-align: center;
+  line-height: 3;
+  .birth{
+    display: flex;
+    span{
+      flex: 1 1 20%;
+      text-align: left;
+      border-right: 1px solid $grey-light-color;
+    }
+    .item{
+      flex: 1 1 80%;
+    }
+  }
+  .univ{
+    display: flex;
+    span{
+      flex: 1 1 20%;
+      text-align: left;
+      border-right: 1px solid $grey-light-color;
+    }
+    .item{
+      flex: 1 1 80%;
+      img{
+        width: $img-size;
+        height: $img-size;
+      }
+    }
+  }
+  .contact{
+    display: flex;
+    span{
+      flex: 1 1 20%;
+      text-align: left;
+      border-right: 1px solid $grey-light-color;
+    }
+    .item{
+      flex: 1 1 80%;
+      li a{
+        color:$black-color;
+        text-decoration: none;
+      }
+      #email:hover{
+        background-color: $grey-dark-color;
+        text-decoration: underline;
+      }
+      #instagram:hover{
+        text-decoration: underline;
+      }
+      #github:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 @media screen and (max-width:768px){
-  .home{
-    margin: $padding 0;
+  .profile{
+    margin: $padding $padding;
     border-radius: 0%;
-    margin-top: 0%;
     white-space: pre-line;
+    .greeting{
+      margin-top: 4%;
+    }
+  }
+  .info{
+    margin: $padding 0;
+    .univ .item{
+      white-space: pre-line;
+    }
   }
 }
