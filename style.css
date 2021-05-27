@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'NEXON Lv2 Gothic Bold';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NEXON Lv1 Gothic OTF';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'NEXON Lv1 Gothic OTF';
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  color: #ffffff;
+}
+
+header {
+  font-family: 'NEXON Lv2 Gothic Bold';
+  padding: 120px 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee88aa), to(#d0b3e6));
+  background: linear-gradient(#ee88aa, #d0b3e6);
+  text-align: center;
+}
+
+#Nevigation {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  background-color: #ee88aa;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+#Nevigation:in-range .name {
+  margin: 10px 10px;
+}
+
+.profile_btn {
+  border: 1px solid #ffffff;
+  border-radius: 5%;
+}
+
+.profile_btn:hover {
+  opacity: 0.9;
+  background-color: white;
+  color: #ee88aa;
+}
+
+.info_btn, .favorite_btn, .skills_btn, .project_btn {
+  margin: 10px 10px;
+  position: relative;
+}
+
+.info_btn:hover:before, .favorite_btn:hover:before, .skills_btn:hover:before, .project_btn:hover:before {
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+}
+
+.info_btn:before, .favorite_btn:before, .skills_btn:before, .project_btn:before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -0px;
+  background: white;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  -webkit-transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  margin: 0 120px;
+  background-color: #f88379;
+  border-radius: 5% / 20%;
+}
+
+.profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 20px 20px;
+}
+
+.profile .greeting {
+  margin-top: 4.5%;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.profile .greeting .hello {
+  font-family: 'NEXON Lv2 Gothic Bold';
+}
+
+.profile .greeting .detail {
+  border-top: 1px solid #ffffff;
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    margin: 20px 0;
+    border-radius: 0%;
+    margin-top: 0%;
+    white-space: pre-line;
+  }
+}
+/*# sourceMappingURL=style.css.map */

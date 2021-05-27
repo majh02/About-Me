@@ -3,11 +3,14 @@ $black-color:#000000;
 $white-color:#ffffff;
 $lavendar-color:#d0b3e6;
 $pink-color:#ee88aa;
+$coral-color:#f88379;
 $lemon-color:#fffaad;
 $brown-color:#b2876f;
 
 // Size
-$padding:10px;
+$padding:20px;
+$side-padding:120px;
+$profile-size:200px;
 
 // Font-Size
 $font-huge:30px;
@@ -17,6 +20,13 @@ $font-small:12px;
 $font-micro:10px;
 
 @font-face {
+  font-family: 'NEXON Lv2 Gothic Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'NEXON Lv1 Gothic OTF';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
   font-weight: normal;
@@ -24,7 +34,15 @@ $font-micro:10px;
 }
 
 body{
+  height: 100%;
+  width: 100%;
   font-family: 'NEXON Lv1 Gothic OTF';
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat;
+  // background-attachment: fixed !important;
+  // background-size: 100% !important;
+  // background-position: center top !important;
+  color: $white-color;
 }
 
 ul{
@@ -35,41 +53,99 @@ button{
   border: none;
   cursor: pointer;
   outline: none;
+  background: none;
+  color: $white-color;
 }
 
-.underline-hover-btn{
-  display: inline-block;
-    padding: 1em 0;
-    border-radius: 0;
-  color: #b2876f;
-    margin-top:2rem;
-    font-weight: bold;
-    font-size: 0.678rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-  position: relative;
-    &:hover{
-        color: #b2876f;
-        &:before{
-            transform: none;
-            opacity: 1;
-            transition-duration: .4s;
-        }
-        
-    }
+header{
+  font-family: 'NEXON Lv2 Gothic Bold';
+  // position: relative;
+  // top: 10px;
+  padding: $side-padding 0;
+  background:linear-gradient($pink-color,$lavendar-color);
+  text-align: center;
+}
 
+#Nevigation{
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: $padding*2;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: $pink-color;
+  color: $white-color;
+  font-size: $font-medium;
+  &:in-range
+  .name{
+    margin: $padding/2 $padding/2;
+  }
+}
+.profile_btn{
+  border: 1px solid $white-color;
+  border-radius: 5%;
+  &:hover{
+    opacity: 0.9;
+    background-color: white;
+    color: $pink-color;
+  }
+}
+.info_btn, .favorite_btn, .skills_btn, .project_btn{
+  margin: $padding/2 $padding/2;
+  position: relative;
+  &:hover{
     &:before{
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        left: 0;
-        bottom: -0px;
-        background: lighten(#b2876f, 20%);
-        transform: translateY(6px);
-        opacity: 0;
-        transition: 1.8s cubic-bezier(.2,1,.3,1);
-        pointer-events: none;
+      transform: none;
+      opacity: 1;
+      transition-duration: .4s;
     }
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -0px;
+    background: lighten($white-color, 20%);
+    transform: translateY(6px);
+    transition: 0.8s cubic-bezier(.2,1,.3,1);
+  }
+}
+
+.profile{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-around;
+  margin: 0 $side-padding;
+  background-color: $coral-color;
+  border-radius: 5% / 20%;
+  img{
+    width: $profile-size;
+    height: $profile-size;
+    border-radius: 50%;
+    padding:$padding $padding;
+  }
+  .greeting{
+    margin-top: 4.5%;
+    line-height: 1.2;
+    text-align: center;
+    .hello{
+      font-family: 'NEXON Lv2 Gothic Bold';
+    }
+    .detail{
+      border-top: 1px solid $white-color;
+      padding-top: $padding;
+    }
+  }
+}
+
+@media screen and (max-width:768px){
+  .home{
+    margin: $padding 0;
+    border-radius: 0%;
+    margin-top: 0%;
+    white-space: pre-line;
+  }
 }
