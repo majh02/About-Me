@@ -37,6 +37,7 @@ $font-micro:10px;
 }
 
 body{
+  position: relative;
   height: 100%;
   width: 100%;
   font-family: 'NEXON Lv1 Gothic OTF';
@@ -182,6 +183,7 @@ header{
   }
   .univ{
     display: flex;
+    height: $side-padding*1.2;
     line-height: 1.5;
     span{
       flex: 1 1 20%;
@@ -193,6 +195,7 @@ header{
       img{
         width: $img-size;
         height: $img-size;
+        border-radius: 50%;
       }
     }
   }
@@ -226,7 +229,31 @@ header{
   }
 }
 
-@media screen and (max-width:768px){
+//Favorite
+.favorite{
+  margin: $padding $side-padding/2;
+  text-align: center;
+  ul{
+    display: flex;
+    font-size: $font-large;
+  }
+  .item{
+    justify-content: space-evenly;
+  }
+  .detail li{
+    flex: 1 1 33%;
+  }
+  i{
+    width: $profile-size;
+    height: $profile-size;
+    background-color: $beige-color;
+    border-radius: 50%;
+    font-size: $img-size;
+    color: $pink-color;
+  }
+}
+
+@media screen and (max-width:800px){
   .profile{
     margin: $padding 0;
     border-radius: 0%;
@@ -237,8 +264,21 @@ header{
   }
   .info{
     margin: $padding $padding;
-    .univ .item{
-      white-space: pre-line;
+    .univ {
+      height: $side-padding*2;
+      .item{
+        white-space: pre-line;
+      }
+    }
+  }
+  .favorite{
+    margin: $padding $padding;
+    .item li{
+      width: $img-size*1.5;
+      height: $img-size*1.5;
+    }
+    i{
+      font-size: $img-size/2;
     }
   }
 }
