@@ -67,7 +67,7 @@ h1, h3{
 
 .title{
   padding-top: $side-padding/2;
-  padding-bottom: $side-padding/3;
+  padding-bottom: $padding*2;
   color: $black-color;
 }
 
@@ -230,7 +230,7 @@ header{
 
 //Favorite
 .favorite{
-  margin: $padding $side-padding/2;
+  margin: $padding $side-padding;
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -290,9 +290,30 @@ header{
 // Skills
 .skills{
   margin: $padding $side-padding;
+  text-align: center;
   img{
-    width: $img-size;
-    height: $img-size;
+    width: $img-size*0.9;
+    height: $img-size*0.9;
+  }
+  .frontend{
+    display: flex;
+    .web{
+      flex: 1 1 60%;
+    }
+    .app{
+      flex: 1 1 40%;
+    }
+  }
+  .web, .app, .etc{
+    border-bottom: 1px solid $grey-light-color;
+    .language{
+      display: flex;
+      justify-content: space-evenly;
+      margin: $padding 0;
+      p{
+        font-size: $font-small;
+      }
+    }
   }
 }
 
@@ -320,6 +341,12 @@ header{
     justify-content: center;
     .color, .flower, .hobby{
       margin: $padding 0;
+    }
+  }
+  .skills{
+    margin: 0 $padding;
+    .frontend{
+      flex-direction: column;
     }
   }
 }
