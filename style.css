@@ -1,3 +1,7 @@
+:export {
+  pinkcolor: #ee88aa;
+}
+
 @font-face {
   font-family: 'NEXON Lv2 Gothic Bold';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff") format("woff");
@@ -15,10 +19,14 @@
 body {
   height: 100%;
   width: 100%;
+  left: 0;
   font-family: 'NEXON Lv1 Gothic OTF';
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background-image: url("image/background.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed !important;
+  background-position: center top !important;
 }
 
 ul {
@@ -40,18 +48,20 @@ h1, h3 {
 
 .title {
   padding-top: 60px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   color: #000000;
 }
 
 #Nevigation {
   position: -webkit-sticky;
   position: sticky;
+  left: 0;
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  width: 100%;
+  height: 60px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -ms-flex-line-pack: distribute;
@@ -59,15 +69,12 @@ h1, h3 {
   background-color: #ee88aa;
   color: #ffffff;
   font-size: 15px;
-}
-
-#Nevigation .name {
-  position: relative;
-  top: 30%;
+  opacity: 0.9;
+  line-height: 4;
 }
 
 #Nevigation .menu button {
-  margin: 10px 10px;
+  margin: 0 10px;
   font-size: 15px;
 }
 
@@ -110,11 +117,25 @@ h1, h3 {
   transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+#top_btn {
+  position: fixed;
+  right: 3%;
+  bottom: 10%;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 4;
+  background-color: #ee88aa;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
 header {
   padding: 120px 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ee88aa), to(#F9F5F0));
-  background: linear-gradient(#ee88aa, #F9F5F0);
-  color: #ffffff;
+  width: 100%;
+  height: 500px;
+  color: #000000;
   text-align: center;
 }
 
@@ -281,7 +302,7 @@ header {
 }
 
 .favorite i {
-  line-height: 2.3;
+  line-height: 2.43;
   font-size: 100px;
 }
 
@@ -291,11 +312,11 @@ header {
 }
 
 .favorite .color i {
-  color: #c6c4f0;
+  color: #9678D2;
 }
 
 .favorite .color:hover span {
-  border-bottom: 5px solid #c6c4f0;
+  border-bottom: 5px solid #9678D2;
 }
 
 .favorite .flower i {
@@ -315,7 +336,7 @@ header {
 }
 
 .skills {
-  margin: 20px 120px;
+  margin: 0 120px;
   text-align: center;
 }
 
@@ -342,7 +363,7 @@ header {
           flex: 1 1 40%;
 }
 
-.skills .web, .skills .app, .skills .etc {
+.skills .web, .skills .app {
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -353,14 +374,39 @@ header {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin: 20px 0;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .skills .web .language p, .skills .app .language p, .skills .etc .language p {
   font-size: 12px;
 }
 
+footer {
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  line-height: 8;
+  color: #ffffff;
+  background-image: url("image/background.jpg");
+}
+
+footer i {
+  z-index: 2;
+  line-height: 5;
+  padding: 0 20px;
+  font-size: 30px;
+}
+
+footer p {
+  line-height: 1;
+  font-size: 15px;
+}
+
 @media screen and (max-width: 800px) {
+  header {
+    height: 300px;
+  }
   .profile {
     margin: 20px 0;
     border-radius: 0%;
@@ -406,14 +452,19 @@ header {
   0%, 50% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
+    font-size: 100px;
   }
   5%, 15%, 25%, 35%, 45% {
     -webkit-transform: rotate(13deg);
             transform: rotate(13deg);
+    font-size: 120px;
+    line-height: 2;
   }
   10%, 20%, 30%, 40% {
     -webkit-transform: rotate(-13deg);
             transform: rotate(-13deg);
+    font-size: 130px;
+    line-height: 1.9;
   }
 }
 
@@ -421,14 +472,19 @@ header {
   0%, 50% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
+    font-size: 100px;
   }
   5%, 15%, 25%, 35%, 45% {
     -webkit-transform: rotate(13deg);
             transform: rotate(13deg);
+    font-size: 120px;
+    line-height: 2;
   }
   10%, 20%, 30%, 40% {
     -webkit-transform: rotate(-13deg);
             transform: rotate(-13deg);
+    font-size: 130px;
+    line-height: 1.9;
   }
 }
 /*# sourceMappingURL=style.css.map */

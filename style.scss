@@ -3,7 +3,7 @@ $black-color:#000000;
 $white-color:#ffffff;
 $grey-dark-color:#909090;
 $grey-light-color: #e0e0e0;
-$lavendar-color:#c6c4f0;
+$lavendar-color:#9678D2;
 $pink-color:#ee88aa;
 $beige-color:#F9F5F0;
 $lemon-color:#ffc44c;
@@ -22,6 +22,11 @@ $font-medium:15px;
 $font-small:12px;
 $font-micro:10px;
 
+:export{
+  pinkcolor:$pink-color;
+}
+
+
 @font-face {
   font-family: 'NEXON Lv2 Gothic Bold';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff') format('woff');
@@ -39,13 +44,14 @@ $font-micro:10px;
 body{
   height: 100%;
   width: 100%;
+  left: 0;
   font-family: 'NEXON Lv1 Gothic OTF';
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background-image: url('image/background.jpg');
   background-repeat: no-repeat;
-  // background-attachment: fixed !important;
+  background-attachment: fixed !important;
   // background-size: 100% !important;
-  // background-position: center top !important;
-  // color: $white-color;
+  background-position: center top !important;
 }
 
 ul{
@@ -67,27 +73,27 @@ h1, h3{
 
 .title{
   padding-top: $side-padding/2;
-  padding-bottom: $padding*2;
+  padding-bottom: $padding;
   color: $black-color;
 }
 
 // Nevigation
 #Nevigation{
   position: sticky;
+  left: 0;
   top: 0;
   display: flex;
-  height: $padding*2;
+  width: 100%;
+  height: $padding*3;
   justify-content: space-around;
   align-content: space-around;
   background-color: $pink-color;
   color: $white-color;
   font-size: $font-medium;
-  .name{
-    position: relative;
-    top: 30%;
-  }
+  opacity: 0.9;
+  line-height: 4;
   .menu button{
-    margin: $padding/2 $padding/2;
+    margin: 0 $padding/2;
     font-size: $font-medium;
   }
 }
@@ -124,11 +130,27 @@ h1, h3{
   }
 }
 
+// Top Button
+#top_btn{
+  position: fixed;
+  right: 3%;
+  bottom: 10%;
+  z-index: 1;
+  width: $img-size/2;
+  height: $img-size/2;
+  text-align: center;
+  line-height: 4;
+  background-color: $pink-color;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
 // Header
 header{
   padding: $side-padding 0;
-  background:linear-gradient($pink-color,$beige-color);
-  color: $white-color;
+  width: 100%;
+  height: 500px;
+  color: $black-color;
   text-align: center;
 }
 
@@ -247,7 +269,7 @@ header{
     border-radius: 50%;
   }
   i{
-    line-height: 2.3;
+    line-height: 2.43;
     font-size: $img-size;
   }
   div:hover{
@@ -289,7 +311,7 @@ header{
 
 // Skills
 .skills{
-  margin: $padding $side-padding;
+  margin: 0 $side-padding;
   text-align: center;
   img{
     width: $img-size*0.9;
@@ -304,12 +326,15 @@ header{
       flex: 1 1 40%;
     }
   }
-  .web, .app, .etc{
+  .web, .app{
     border-bottom: 1px solid $grey-light-color;
+  }
+  .web, .app, .etc{
     .language{
       display: flex;
       justify-content: space-evenly;
-      margin: $padding 0;
+      margin-top: $padding*2;
+      margin-bottom: $padding;
       p{
         font-size: $font-small;
       }
@@ -317,7 +342,30 @@ header{
   }
 }
 
+// Footer
+footer{
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  line-height: 8;
+  color: $white-color;
+  background-image: url('image/background.jpg');
+  i{
+    z-index: 2;
+    line-height: 5;
+    padding: 0 $padding;
+    font-size: $font-huge;
+  }
+  p{
+    line-height: 1;
+    font-size: $font-medium;
+  }
+}
+
 @media screen and (max-width:800px){
+  header{
+    height: 300px;
+  }
   .profile{
     margin: $padding 0;
     border-radius: 0%;
@@ -354,11 +402,17 @@ header{
 @keyframes icon{
   0%, 50%{
     transform: rotate(0deg);
+    font-size: $img-size;
 	}
   5%, 15%, 25%, 35%, 45% {
     transform: rotate(13deg);
+    font-size: $img-size*1.2;
+    line-height: 2;
   }
   10%, 20%, 30%, 40% {
     transform: rotate(-13deg);
+    font-size: $img-size*1.3;
+    line-height: 1.9;
   }
 }
+
