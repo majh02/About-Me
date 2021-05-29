@@ -13,7 +13,6 @@
 }
 
 body {
-  position: relative;
   height: 100%;
   width: 100%;
   font-family: 'NEXON Lv1 Gothic OTF';
@@ -256,35 +255,72 @@ header {
 
 .favorite {
   margin: 20px 60px;
-  text-align: center;
-}
-
-.favorite ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
   font-size: 20px;
 }
 
-.favorite .item {
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+.favorite .color, .favorite .flower, .favorite .hobby {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.favorite .detail li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 33%;
-          flex: 1 1 33%;
-}
-
-.favorite i {
+.favorite .icon {
+  display: inline-block;
+  text-align: center;
   width: 250px;
   height: 250px;
   background-color: #F9F5F0;
   border-radius: 50%;
+}
+
+.favorite i {
+  line-height: 2.3;
   font-size: 100px;
-  color: #ee88aa;
+}
+
+.favorite div:hover i {
+  -webkit-animation: icon 10s infinite;
+          animation: icon 10s infinite;
+}
+
+.favorite .color i {
+  color: #c6c4f0;
+}
+
+.favorite .color:hover span {
+  border-bottom: 5px solid #c6c4f0;
+}
+
+.favorite .flower i {
+  color: #ffc44c;
+}
+
+.favorite .flower:hover span {
+  border-bottom: 5px solid #ffc44c;
+}
+
+.favorite .hobby i {
+  color: #000000;
+}
+
+.favorite .hobby:hover span {
+  border-bottom: 5px solid #e0e0e0;
+}
+
+.skills {
+  margin: 20px 120px;
+}
+
+.skills img {
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 800px) {
@@ -306,14 +342,47 @@ header {
     white-space: pre-line;
   }
   .favorite {
-    margin: 20px 20px;
+    margin: 0 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .favorite .item li {
-    width: 150px;
-    height: 150px;
+  .favorite .color, .favorite .flower, .favorite .hobby {
+    margin: 20px 0;
   }
-  .favorite i {
-    font-size: 50px;
+}
+
+@-webkit-keyframes icon {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  5%, 15%, 25%, 35%, 45% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+  10%, 20%, 30%, 40% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+  }
+}
+
+@keyframes icon {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  5%, 15%, 25%, 35%, 45% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+  }
+  10%, 20%, 30%, 40% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
   }
 }
 /*# sourceMappingURL=style.css.map */

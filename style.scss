@@ -3,10 +3,10 @@ $black-color:#000000;
 $white-color:#ffffff;
 $grey-dark-color:#909090;
 $grey-light-color: #e0e0e0;
-$lavendar-color:#d0b3e6;
+$lavendar-color:#c6c4f0;
 $pink-color:#ee88aa;
 $beige-color:#F9F5F0;
-$lemon-color:#fffaad;
+$lemon-color:#ffc44c;
 $brown-color:#bd8d73;
 
 // Size
@@ -37,7 +37,6 @@ $font-micro:10px;
 }
 
 body{
-  position: relative;
   height: 100%;
   width: 100%;
   font-family: 'NEXON Lv1 Gothic OTF';
@@ -232,24 +231,68 @@ header{
 //Favorite
 .favorite{
   margin: $padding $side-padding/2;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
-  ul{
-    display: flex;
-    font-size: $font-large;
+  font-size: $font-large;
+  .color, .flower, .hobby{
+    justify-content: center;
   }
-  .item{
-    justify-content: space-evenly;
-  }
-  .detail li{
-    flex: 1 1 33%;
-  }
-  i{
+  .icon{
+    display: inline-block;
+    text-align: center;
     width: $profile-size;
     height: $profile-size;
     background-color: $beige-color;
     border-radius: 50%;
+  }
+  i{
+    line-height: 2.3;
     font-size: $img-size;
-    color: $pink-color;
+  }
+  div:hover{
+    i{
+      animation: icon 10s infinite;
+    }
+  }
+  .color{
+    i{
+      color: $lavendar-color;
+    }
+    &:hover{
+      span{
+        border-bottom: 5px solid $lavendar-color;
+      }
+    }
+  }
+  .flower{
+    i{
+      color: $lemon-color;
+    }
+    &:hover{
+      span{
+        border-bottom: 5px solid $lemon-color;
+      }
+    }
+  }
+  .hobby{
+    i{
+      color: $black-color;
+    }
+    &:hover{
+      span{
+        border-bottom: 5px solid $grey-light-color;
+      }
+    }
+  }
+}
+
+// Skills
+.skills{
+  margin: $padding $side-padding;
+  img{
+    width: $img-size;
+    height: $img-size;
   }
 }
 
@@ -272,13 +315,23 @@ header{
     }
   }
   .favorite{
-    margin: $padding $padding;
-    .item li{
-      width: $img-size*1.5;
-      height: $img-size*1.5;
+    margin: 0 $padding;
+    flex-direction: column;
+    justify-content: center;
+    .color, .flower, .hobby{
+      margin: $padding 0;
     }
-    i{
-      font-size: $img-size/2;
-    }
+  }
+}
+
+@keyframes icon{
+  0%, 50%{
+    transform: rotate(0deg);
+	}
+  5%, 15%, 25%, 35%, 45% {
+    transform: rotate(13deg);
+  }
+  10%, 20%, 30%, 40% {
+    transform: rotate(-13deg);
   }
 }
