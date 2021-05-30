@@ -16,16 +16,19 @@
 <body>
     <!-- Nevigation -->
     <section class="nevigation" id="Nevigation">
-        <div class="name">
-            <span>ABOUT JIHYE</span>
+        <div class="left">
+            <span class="emoji">👩🏻‍💻‍</span>
+            <div class="name">
+                <span>ABOUT JIHYE</span>
+            </div>
         </div>
-        <div class="menu">
-            <button class="home_btn">HOME</button>
-            <button class="profile_btn">Profile</button>
-            <button class="info_btn">Info</button>
-            <button class="favorite_btn">Favorite</button>
-            <button class="skills_btn">Skills</button>
-            <button class="project_btn">Project</button>
+        <div class="menu" id="menu">
+            <button class="home_btn" id="button1">HOME</button>
+            <button class="profile_btn" id="button2">Profile</button>
+            <button class="info_btn" id="button3">Info</button>
+            <button class="favorite_btn" id="button4">Favorite</button>
+            <button class="skills_btn" id="button5">Skills</button>
+            <button class="project_btn" id="button6">Project</button>
         </div>
     </section>
 
@@ -36,14 +39,14 @@
         </button>
     </div>
     <!-- Header -->
-    <header>
+    <header id="title1">
         <h1>About Me?</h1>
         <h3>SCROLL</h3>
         <i class="fas fa-caret-down"></i>
     </header>
 
     <!-- Profile -->
-    <div class="title">
+    <div class="title" id="title2">
         <h1>Profile</h1>
     </div>
     <section class="profile">
@@ -60,7 +63,7 @@
     </section>
 
     <!-- Information -->
-    <div class="title">
+    <div class="title" id="title3">
         <h1>Information</h1>
     </div>
     <section class="info">
@@ -99,38 +102,39 @@
                     </li>
                 </ul>
             </div>
-        </section>
-    
-        <!-- Favorite -->
-        <div class="title">
-            <h1>Favorite</h1>
         </div>
-        <section class="favorite">
-            <div class="flower">
-                <div class="icon">
-                    <i class="material-icons">filter_vintage</i>
-                </div>
-                <h3>FLOWER</h3>
-                <span>Sunflower</span>
+    </section>
+    
+    <!-- Favorite -->
+    <div class="title" id="title4">
+        <h1>Favorite</h1>
+    </div>
+    <section class="favorite">
+        <div class="flower">
+            <div class="icon">
+                <i class="material-icons">filter_vintage</i>
             </div>
-            <div class="color">
-                <div class="icon">
-                    <i class="material-icons">palette</i>
-                </div>
-                <h3>COLOR</h3>
-                <span>Purple</span>
+            <h3>FLOWER</h3>
+            <span>Sunflower</span>
+        </div>
+        <div class="color">
+            <div class="icon">
+                <i class="material-icons">palette</i>
             </div>
-            <div class="hobby">
-                <div class="icon">
-                    <i class="fas fa-headphones-alt"></i>
-                </div>
-                <h3>Hobby</h3>
-                <span>Listening to Music</span>
+            <h3>COLOR</h3>
+            <span>Purple</span>
+        </div>
+        <div class="hobby">
+            <div class="icon">
+                <i class="fas fa-headphones-alt"></i>
             </div>
-        </section>
+            <h3>Hobby</h3>
+            <span>Listening to Music</span>
+        </div>
+    </section>
 
     <!-- Skills -->
-    <div class="title">
+    <div class="title" id="title5">
         <h1>Skills</h1>
     </div>
     <section class="skills">
@@ -162,17 +166,22 @@
     </section>
 
     <!-- Project -->
-    <section class="project">
+    <section class="project" id="title6">
 
     </section>
 
     <!-- Footer -->
     <footer>
-        <h1>More Information</h1>
+        <h2>If you want to know more about me,</h2>
+        <h1>Please Contact me HERE!</h1>
         <div class="contact">
-            <button><i class="far fa-envelope"></i></button>
-            <button><i class="fab fa-instagram"></i></button>
-            <button><i class="fab fa-github"></i></button>
+            <button>
+                <a href="mailto:majh0294@gmail.com">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </button>
+            <button onclick="window.open('https://www.instagram.com/ji_hyem_021/')"><i class="fab fa-instagram"></i></button>
+            <button onclick="window.open('https://github.com/majh02')"><i class="fab fa-github"></i></button>
         </div>
         <p>Copyright © 2021 About Jihye, All rights reserved.</p>
         <p>Contact for more information. majh0294@gmail.com</p>
