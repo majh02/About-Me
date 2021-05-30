@@ -12,14 +12,12 @@ window.onscroll = function(){
     }
     // Nevigation & TopButton
     if(window.pageYOffset >= header){
-        nevigation.style.background="rgb(238, 136, 170, 0.9)";
-    }
-    else if(window.pageYOffset < header){
-        nevigation.style.background="none";
-        top_btn.style.visibility="hidden";
+        nevigation.style.background="rgb(196,150,188, 0.9)";
+        top_btn.style.visibility="visible"
     }
     else{
-        top_btn.style.visibility="visible"
+        nevigation.style.background="none";
+        top_btn.style.visibility="hidden";
     }
 }
 

@@ -12,6 +12,10 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -45,7 +49,7 @@ h1, h3, button {
 }
 
 .title {
-  padding-top: 120px;
+  padding-top: 60px;
   padding-bottom: 20px;
   color: #000000;
 }
@@ -98,7 +102,7 @@ h1, h3, button {
 .home_btn:hover {
   opacity: 0.9;
   background-color: #ffffff;
-  color: #ee88aa;
+  color: #c496bc;
 }
 
 .profile_btn, .info_btn, .favorite_btn, .skills_btn, .project_btn {
@@ -131,16 +135,23 @@ h1, h3, button {
 
 #top_btn {
   position: fixed;
-  right: 3%;
-  bottom: 8%;
+  right: 2%;
+  bottom: 5%;
   z-index: 2;
+  opacity: 0.9;
   width: 50px;
   height: 50px;
   text-align: center;
-  line-height: 4;
-  background-color: #ee88aa;
+  line-height: 4.8;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
   border-radius: 50%;
   visibility: hidden;
+}
+
+#top_btn i {
+  color: #909090;
+  font-size: 36px;
 }
 
 header {
@@ -296,6 +307,7 @@ header i {
 
 .favorite {
   margin: 20px 120px;
+  padding-top: 34.28571px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,6 +326,7 @@ header i {
 
 .favorite .icon {
   display: inline-block;
+  margin-bottom: 20px;
   text-align: center;
   width: 200px;
   height: 200px;
@@ -418,9 +431,6 @@ footer {
 footer div {
   width: 100%;
   line-height: 12;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
 footer i {
@@ -431,7 +441,7 @@ footer i {
 }
 
 footer i:hover {
-  font-size: 54px;
+  opacity: 0.7;
   color: #F9F5F0;
 }
 
@@ -449,7 +459,7 @@ footer p {
   }
   header {
     height: 300px;
-    line-height: 2;
+    line-height: 1;
   }
   .profile {
     display: block;
@@ -458,18 +468,18 @@ footer p {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-    margin: 20px 0;
-    border-radius: 0%;
+    margin: 20px 20px;
+    border-radius: 10% / 9%;
     white-space: pre-line;
   }
   .profile img {
     width: 200px;
     height: 200px;
-    padding: 0 0;
+    padding: 10px 0;
   }
   .profile .greeting {
     margin: 0 0;
-    line-height: 0.1;
+    line-height: 0;
   }
   .profile .greeting .detail {
     line-height: 2;
