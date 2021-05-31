@@ -6,7 +6,7 @@ $grey-light-color: #e0e0e0;
 $purple-deep-color:#9678D2;
 $purple-color:#c496bc;
 // $pink-color:#ee88aa;
-$beige-color:#F9F5F0;
+$beige-color:#f9f5f0;
 $yellow-color:#ffc44c;
 
 // Size
@@ -167,7 +167,6 @@ header{
   height: 500px;
   line-height: 2.5;
   text-align: center;
-  // color: $white-color;
   h1{
     font-size: $font-huge*2;
   }
@@ -367,6 +366,78 @@ header{
   }
 }
 
+// Project
+.project{
+  margin: 0 $side-padding;
+  .button{
+    display: flex;
+    justify-content: center;
+    // text-align: center;
+    margin-bottom: $padding;
+    button{
+      width: $side-padding*2;
+      height: $padding*2;
+      margin: 0 $padding;
+      line-height: 0.3;
+      font-size: $font-medium;
+      color: $grey-dark-color;
+      border-radius: 5% / 15%;
+      border: 1px solid $grey-light-color;
+    }
+    .total_btn{
+      color: $white-color;
+      background-color: rgb(196,150,188);
+      opacity: 0.7;
+    }
+  }
+  .project_container{
+    display: flex;
+    .next_btn{
+      line-height: 26;
+      height: 100%;
+      color: $grey-dark-color;
+    }
+  }
+  .item{
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+    padding: $padding $padding;
+    button{
+      padding: 0 $padding*2;
+      img{
+        padding-top: $padding;
+        width: auto;
+        height: $img-size*2.5;
+      }
+      .detail{
+        position: relative;
+        top: -45%;
+        text-align: center;
+        color: $black-color;
+        background-color: $white-color;
+        opacity: 0.7;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 300ms ease-in;
+        .name, .language{
+          position: inherit;
+          top: 10%;
+        }
+      }
+    }
+    button:hover{
+      .detail{
+        transform: translateY(0px);
+        visibility: visible;
+      }
+    }
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  }
+}
+
 // Footer
 footer{
   position: relative;
@@ -374,6 +445,7 @@ footer{
   width: 100%;
   height: 500px;
   padding-top: 4%;
+  margin-top: $side-padding/2;
   text-align: center;
   background-image: url('image/background.jpg');
   line-height: 2;
@@ -451,6 +523,31 @@ footer{
     margin: 0 $padding;
     .frontend{
       flex-direction: column;
+    }
+  }
+
+  // Project
+  .project{
+    margin: 0 0;
+    .button{
+      display: inline-block;
+      text-align: center;
+      flex-direction: column;
+      button{
+        margin: $padding/2 $padding;
+      }
+    }
+    .next_btn{
+      visibility: hidden;
+    }
+    .item{
+      display: inline-block;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 0;
+      button{
+        padding: 0 $padding;
+      }
     }
   }
 }

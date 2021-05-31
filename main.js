@@ -21,12 +21,57 @@ window.onscroll = function(){
     }
 }
 
-var buttonArr = document.querySelectorAll('#Nevigation .menu button');
-for(let i=0; i<buttonArr.length; i++){
-    buttonArr[i].addEventListener('click',()=>{
+var nevi_buttonArr = document.querySelectorAll('#Nevigation .menu button');
+for(let i=0; i<nevi_buttonArr.length; i++){
+    nevi_buttonArr[i].addEventListener('click',()=>{
         document.getElementById('title'+(i+1)).scrollIntoView(true);
     });
 }
 top_btn.addEventListener('click',()=>{
     document.getElementById('title1').scrollIntoView(true);
+});
+
+var project_buttonArr = document.querySelectorAll('.project .button button');
+var project_itemArr = document.querySelectorAll('.project .project_container .item button');
+for(let j=0; j<project_buttonArr.length;j++){
+    project_buttonArr[j].addEventListener('click',()=>{
+        project_buttonArr[j].style.color="rgb(249, 245, 240)";
+        project_buttonArr[j].style.backgroundColor="rgb(196,150,188)";
+        project_buttonArr[j].style.opacity=0.7;
+        project_buttonArr[(j+1)%3].style.color="rgb(144, 144, 144)";
+        project_buttonArr[(j+1)%3].style.backgroundColor="white";
+        project_buttonArr[(j+2)%3].style.color="rgb(144, 144, 144)";
+        project_buttonArr[(j+2)%3].style.backgroundColor="white";
+        if(j==0){
+            for(let a=0;a<project_itemArr.length;a++){
+                project_itemArr[a].style.visibility="visible";
+            }
+        }
+        else if(j==1){
+            for(let a=0;a<4;a++){
+                project_itemArr[a].style.visibility="visible";
+            }
+            for(let b=4;b<6;b++){
+                project_itemArr[b].style.visibility="hidden";
+            }
+        }
+        else{
+            for(let a=0;a<4;a++){
+                project_itemArr[a].style.visibility="hidden";
+            }
+            for(let b=4;b<6;b++){
+                project_itemArr[b].style.visibility="visible";
+            }
+        }
+
+    });
+}
+
+var project_item = document.querySelector('.project .project_container .item');
+var next_btn = document.querySelectorAll('.project .project_container .next_btn');
+next_btn[0].addEventListener('click',()=>{
+    project_item.scrollBy(-500,0);
+});
+next_btn[1].addEventListener('click',()=>{
+    project_item.scrollBy(500,0);
 });
