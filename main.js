@@ -32,38 +32,35 @@ top_btn.addEventListener('click',()=>{
 });
 
 var project_buttonArr = document.querySelectorAll('.project .button button');
-var project_itemArr = document.querySelectorAll('.project .project_container .item button');
+project_total = document.querySelector('.project .project_container .item');
+project_web = document.querySelector('.project .project_container .item .web');
+project_app = document.querySelector('.project .project_container .item .app');
 for(let j=0; j<project_buttonArr.length;j++){
     project_buttonArr[j].addEventListener('click',()=>{
+        project_buttonArr[j].classList.toggle('clicked');
+
         project_buttonArr[j].style.color="rgb(249, 245, 240)";
         project_buttonArr[j].style.backgroundColor="rgb(196,150,188)";
         project_buttonArr[j].style.opacity=0.7;
+
         project_buttonArr[(j+1)%3].style.color="rgb(144, 144, 144)";
         project_buttonArr[(j+1)%3].style.backgroundColor="white";
+
         project_buttonArr[(j+2)%3].style.color="rgb(144, 144, 144)";
         project_buttonArr[(j+2)%3].style.backgroundColor="white";
+
         if(j==0){
-            for(let a=0;a<project_itemArr.length;a++){
-                project_itemArr[a].style.visibility="visible";
-            }
+            project_web.style.display="flex";
+            project_app.style.display="flex";
         }
         else if(j==1){
-            for(let a=0;a<4;a++){
-                project_itemArr[a].style.visibility="visible";
-            }
-            for(let b=4;b<6;b++){
-                project_itemArr[b].style.visibility="hidden";
-            }
+            project_web.style.display="flex";
+            project_app.style.display="none";
         }
         else{
-            for(let a=0;a<4;a++){
-                project_itemArr[a].style.visibility="hidden";
-            }
-            for(let b=4;b<6;b++){
-                project_itemArr[b].style.visibility="visible";
-            }
+            project_web.style.display="none";
+            project_app.style.display="flex";
         }
-
     });
 }
 

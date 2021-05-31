@@ -434,16 +434,21 @@ header i {
   width: 240px;
   height: 40px;
   margin: 0 20px;
-  line-height: 0.3;
+  line-height: 0.1;
   font-size: 15px;
   color: #909090;
   border-radius: 5% / 15%;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #e0e0e0;
 }
 
-.project .button .total_btn {
+.project .button #total_btn {
   color: #ffffff;
   background-color: #c496bc;
+  opacity: 0.7;
+}
+
+.project .button button:hover {
+  border: 2px solid #c496bc;
   opacity: 0.7;
 }
 
@@ -451,6 +456,9 @@ header i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .project .project_container .next_btn {
@@ -468,33 +476,36 @@ header i {
   padding: 20px 20px;
 }
 
+.project .item .web, .project .item .app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .project .item button {
   padding: 0 40px;
 }
 
 .project .item button img {
-  padding-top: 20px;
+  padding: 2px 2px;
+  margin-top: 20px;
   width: auto;
   height: 250px;
+  border: 5px solid #ffffff;
 }
 
 .project .item button .detail {
-  position: relative;
-  top: -45%;
+  line-height: 0.5;
   text-align: center;
   color: #000000;
   background-color: #ffffff;
   opacity: 0.7;
   visibility: hidden;
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
-  -webkit-transition: all 300ms ease-in;
-  transition: all 300ms ease-in;
 }
 
-.project .item button .detail .name, .project .item button .detail .language {
-  position: inherit;
-  top: 10%;
+.project .item button:hover img {
+  opacity: 0.7;
+  border: 5px solid #c496bc;
 }
 
 .project .item button:hover .detail {
@@ -505,6 +516,14 @@ header i {
 
 .project ::-webkit-scrollbar {
   display: none;
+}
+
+.project #project1 img, .project #project4 img {
+  border-radius: 5% / 10%;
+}
+
+.project #project2 img, .project #project3 img, .project #project5 img, .project #project6 img {
+  border-radius: 5%;
 }
 
 footer {
@@ -632,7 +651,18 @@ footer p {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0 0;
+  }
+  .project .item .web, .project .item .app {
+    display: inline-block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
   }
   .project .item button {
     padding: 0 20px;
@@ -676,6 +706,24 @@ footer p {
             transform: rotate(-13deg);
     font-size: 120px;
     line-height: 1.6;
+  }
+}
+
+@-webkit-keyframes up {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 10px;
+  }
+}
+
+@keyframes up {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */
