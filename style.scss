@@ -88,7 +88,12 @@ h1, h3, button{
   font-size: $font-medium;
   opacity: 0.9;
   line-height: 4;
+
   .left{
+    display: flex;
+    justify-content: space-between;
+  }
+  .emojiAndName{
     display: flex;
     .name{
       font-family: 'NEXON Lv2 Gothic Bold';
@@ -99,13 +104,18 @@ h1, h3, button{
       line-height: 2;
     }
   }
+  .menu_btn i{
+    display: none;
+    margin: 0 $padding;
+    font-size: $font-large;
+  }
   .menu button{
     margin-right: $padding;
     margin: 0 $padding/2;
     font-size: $font-medium;
   }
 }
-.home_btn{
+.home_btn, .contact_btn{
   border: 1px solid $white-color;
   border-radius: 5%;
   line-height: 2;
@@ -212,7 +222,6 @@ header{
   line-height: 3;
   .birth{
     display: flex;
-    position: relative;
     height: $side-padding/(1.5);
     span{
       flex: 1 1 20%;
@@ -381,17 +390,19 @@ header{
       font-size: $font-medium;
       color: $grey-dark-color;
       border-radius: 5% / 15%;
-      border: 2px solid $grey-light-color;
+      border: 2px solid $white-color;
     }
     #total_btn{
       color: $white-color;
       background-color: $purple-color;
-      opacity: 0.7;
     }
   }
+  .clicked{
+    background: $black-color;
+    animation: downup 1s ease;
+  }
   .button button:hover{
-    border: 2px solid $purple-color;
-    opacity: 0.7;
+    border: 2px solid $grey-light-color;
   }
   .project_container{
     display: flex;
@@ -401,12 +412,16 @@ header{
       height: 100%;
       color: $grey-dark-color;
     }
+    .next_btn:hover{
+      opacity: 0.5;
+    }
   }
   .item{
     display: flex;
     overflow: auto;
     scroll-behavior: smooth;
     padding: $padding $padding;
+    // animation: updown 1s infinite;
     .web, .app{
       display: flex;
     }
@@ -485,8 +500,28 @@ footer{
 @media screen and (max-width:900px){
   #Nevigation{
     display: block;
+    .menu_btn i{
+      display: flex;
+    }
     .menu{
-      visibility: hidden;
+      display: none;
+      white-space: pre-line;
+      background-color: $purple-color;
+      button{
+        padding: 0 0;
+        margin: 0 0;
+        line-height: 2;
+        border: none;
+        width: 100%;
+        &:hover{
+          opacity: 0.9;
+          background-color: $white-color;
+          color: $purple-color;
+        }
+        &:before{
+          display: none;
+        }
+      }
     }
   }
   header{
@@ -542,9 +577,9 @@ footer{
   .project{
     margin: 0 0;
     .button{
-      display: inline-block;
+      display: block;
       text-align: center;
-      flex-direction: column;
+      white-space: pre-line;
       button{
         margin: $padding/2 $padding;
       }
@@ -553,14 +588,16 @@ footer{
       visibility: hidden;
     }
     .item{
-      display: inline-block;
+      display: block;
       flex-direction: column;
       text-align: center;
       justify-content: center;
       padding: 0 0;
+      overflow: unset;
       .web, .app{
         display: inline-block;
         flex-direction: column;
+        justify-content: center;
         text-align: center;
       }
       button{
@@ -587,8 +624,7 @@ footer{
   }
 }
 
-@keyframes up{
-  0% {margin-top: 0px;}
-	100% {margin-top: 10px;}
+@keyframes downup{
+  0% {margin-top: 5%;}
+  50% {margin-top: 0%;}
 }
-

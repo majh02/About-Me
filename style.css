@@ -75,16 +75,31 @@ h1, h3, button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#Nevigation .left .name {
+#Nevigation .emojiAndName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#Nevigation .emojiAndName .name {
   font-family: 'NEXON Lv2 Gothic Bold';
 }
 
-#Nevigation .left .emoji {
+#Nevigation .emojiAndName .emoji {
   margin: 0 20px;
   font-size: 30px;
   line-height: 2;
+}
+
+#Nevigation .menu_btn i {
+  display: none;
+  margin: 0 20px;
+  font-size: 20px;
 }
 
 #Nevigation .menu button {
@@ -93,13 +108,13 @@ h1, h3, button {
   font-size: 15px;
 }
 
-.home_btn {
+.home_btn, .contact_btn {
   border: 1px solid #ffffff;
   border-radius: 5%;
   line-height: 2;
 }
 
-.home_btn:hover {
+.home_btn:hover, .contact_btn:hover {
   opacity: 0.9;
   background-color: #ffffff;
   color: #c496bc;
@@ -218,7 +233,6 @@ header i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   height: 80px;
 }
 
@@ -438,18 +452,22 @@ header i {
   font-size: 15px;
   color: #909090;
   border-radius: 5% / 15%;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #ffffff;
 }
 
 .project .button #total_btn {
   color: #ffffff;
   background-color: #c496bc;
-  opacity: 0.7;
+}
+
+.project .clicked {
+  background: #000000;
+  -webkit-animation: downup 1s ease;
+          animation: downup 1s ease;
 }
 
 .project .button button:hover {
-  border: 2px solid #c496bc;
-  opacity: 0.7;
+  border: 2px solid #e0e0e0;
 }
 
 .project .project_container {
@@ -465,6 +483,10 @@ header i {
   line-height: 26;
   height: 100%;
   color: #909090;
+}
+
+.project .project_container .next_btn:hover {
+  opacity: 0.5;
 }
 
 .project .item {
@@ -565,8 +587,30 @@ footer p {
   #Nevigation {
     display: block;
   }
+  #Nevigation .menu_btn i {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   #Nevigation .menu {
-    visibility: hidden;
+    display: none;
+    white-space: pre-line;
+    background-color: #c496bc;
+  }
+  #Nevigation .menu button {
+    padding: 0 0;
+    margin: 0 0;
+    line-height: 2;
+    border: none;
+    width: 100%;
+  }
+  #Nevigation .menu button:hover {
+    opacity: 0.9;
+    background-color: #ffffff;
+    color: #c496bc;
+  }
+  #Nevigation .menu button:before {
+    display: none;
   }
   header {
     height: 300px;
@@ -631,12 +675,9 @@ footer p {
     margin: 0 0;
   }
   .project .button {
-    display: inline-block;
+    display: block;
     text-align: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    white-space: pre-line;
   }
   .project .button button {
     margin: 10px 20px;
@@ -645,7 +686,7 @@ footer p {
     visibility: hidden;
   }
   .project .item {
-    display: inline-block;
+    display: block;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -655,6 +696,7 @@ footer p {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0 0;
+    overflow: unset;
   }
   .project .item .web, .project .item .app {
     display: inline-block;
@@ -662,6 +704,9 @@ footer p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
   }
   .project .item button {
@@ -709,21 +754,21 @@ footer p {
   }
 }
 
-@-webkit-keyframes up {
+@-webkit-keyframes downup {
   0% {
-    margin-top: 0px;
+    margin-top: 5%;
   }
-  100% {
-    margin-top: 10px;
+  50% {
+    margin-top: 0%;
   }
 }
 
-@keyframes up {
+@keyframes downup {
   0% {
-    margin-top: 0px;
+    margin-top: 5%;
   }
-  100% {
-    margin-top: 10px;
+  50% {
+    margin-top: 0%;
   }
 }
 /*# sourceMappingURL=style.css.map */
