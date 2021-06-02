@@ -216,8 +216,7 @@ header{
 
 // Info
 .info{
-  margin: $padding $side-padding;
-  margin-left: $side-padding*2;
+  margin: $padding $side-padding*1.5;
   line-height: 2;
   table{
     width: 100%;
@@ -230,12 +229,11 @@ header{
     padding: $padding 0;
   }
   .info_title{
-    flex: 1 1 30%;
-    text-align: start;
-    border-right: 1px solid $grey-light-color;
+    flex: 1 1 40%;
+    text-align: center;
   }
   .item{
-    flex: 1 1 70%;
+    flex: 1 1 60%;
     text-align: center;
     font-weight: normal;
   }
@@ -542,7 +540,6 @@ footer{
       padding: $padding/2 0;
     }
     .info_title{
-      border: none;
       text-align: center;
       font-size: $font-large;
     }
