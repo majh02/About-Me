@@ -34,10 +34,11 @@ for(let i=0; i<nevi_buttonArr.length; i++){
     });
 }
 
-// window resize event
+// window resize evnet
 window.addEventListener('resize',()=>{
     if(window.innerWidth > 900)
         menu.style.display="block";
+    else menu.style.display="none";
 });
 
 // Top Button click event
@@ -64,12 +65,11 @@ menu_btn.addEventListener('click',()=>{
 
 // Project button(Total, Web, App) click event
 var project_buttonArr = document.querySelectorAll('.project .button button');
-project_total = document.querySelector('.project .project_container .item');
-project_web = document.querySelector('.project .project_container .item .web');
-project_app = document.querySelector('.project .project_container .item .app');
+var project_total = document.querySelector('.project .project_container .item');
+var project_web = document.querySelector('.project .project_container .item .web');
+var project_app = document.querySelector('.project .project_container .item .app');
 for(let j=0; j<project_buttonArr.length;j++){
     project_buttonArr[j].addEventListener('click',()=>{
-        project_buttonArr[j].classList.toggle('clicked');
 
         // project_buttonArr[j]: selected button
         project_buttonArr[j].style.color="rgb(249, 245, 240)";
@@ -81,21 +81,22 @@ for(let j=0; j<project_buttonArr.length;j++){
         project_buttonArr[(j+2)%3].style.color="rgb(144, 144, 144)";
         project_buttonArr[(j+2)%3].style.backgroundColor="white";
 
+        // classlist clicked
+        project_buttonArr[j].classList.add('clicked');
+        project_buttonArr[(j+1)%3].classList.remove('clicked');
+        project_buttonArr[(j+2)%3].classList.remove('clicked');
+
         if(j==0){ //click total-button
             project_web.style.display="flex";
             project_app.style.display="flex";
-            // project_web.style.animation="downup 1s ease";
-            // project_app.style.animation="downup 1s ease";
         }
         else if(j==1){ //click web-button
             project_web.style.display="flex";
             project_app.style.display="none";
-            // project_web.style.animation="downup 1s ease";
         }
         else{ //click app-button
             project_web.style.display="none";
             project_app.style.display="flex";
-            // project_app.style.animation="downup 1s ease";
         }
     });
 }

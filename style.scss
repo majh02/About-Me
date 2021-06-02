@@ -398,7 +398,6 @@ header{
     }
   }
   .clicked{
-    background: $black-color;
     animation: downup 1s ease;
   }
   .button button:hover{
@@ -421,7 +420,6 @@ header{
     overflow: auto;
     scroll-behavior: smooth;
     padding: $padding $padding;
-    // animation: updown 1s infinite;
     .web, .app{
       display: flex;
     }
@@ -498,6 +496,8 @@ footer{
 }
 
 @media screen and (max-width:900px){
+
+  // Nevigation
   #Nevigation{
     display: block;
     .menu_btn i{
@@ -524,10 +524,12 @@ footer{
       }
     }
   }
+  // Header
   header{
     height: 300px;
     line-height: 1;
   }
+  // Profile
   .profile{
     display: block;
     flex-direction: column;
@@ -549,6 +551,7 @@ footer{
       }
     }
   }
+  // Info
   .info{
     margin: $padding $padding;
     .univ {
@@ -558,6 +561,7 @@ footer{
       }
     }
   }
+  // Favorite
   .favorite{
     margin: 0 $padding;
     flex-direction: column;
@@ -566,13 +570,13 @@ footer{
       margin: $padding 0;
     }
   }
+  // Skills
   .skills{
     margin: 0 $padding;
     .frontend{
       flex-direction: column;
     }
   }
-
   // Project
   .project{
     margin: 0 0;
@@ -607,6 +611,7 @@ footer{
   }
 }
 
+// Favorite icon animation
 @keyframes icon{
   0%, 50%{
     transform: rotate(0deg);
@@ -624,7 +629,8 @@ footer{
   }
 }
 
+// Project downup animation
 @keyframes downup{
-  0% {margin-top: 5%;}
+  0% {margin-top: 3%;}
   50% {margin-top: 0%;}
 }

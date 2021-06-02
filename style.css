@@ -461,7 +461,6 @@ header i {
 }
 
 .project .clicked {
-  background: #000000;
   -webkit-animation: downup 1s ease;
           animation: downup 1s ease;
 }
@@ -756,7 +755,7 @@ footer p {
 
 @-webkit-keyframes downup {
   0% {
-    margin-top: 5%;
+    margin-top: 3%;
   }
   50% {
     margin-top: 0%;
@@ -765,7 +764,7 @@ footer p {
 
 @keyframes downup {
   0% {
-    margin-top: 5%;
+    margin-top: 3%;
   }
   50% {
     margin-top: 0%;
