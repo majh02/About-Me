@@ -10,7 +10,7 @@ window.onscroll = function(){
     // Page Fadeout
     if (window.pageYOffset > 0) {
         var opac = (window.pageYOffset / nystories);
-        document.body.style.background = "linear-gradient(rgba(255, 255, 255, " + opac + "), rgba(255, 255, 255, " + opac + ")), url('image/background.png')";
+        document.body.style.background = "linear-gradient(rgba(255, 255, 255, " + opac + "), rgba(255, 255, 255, " + opac + ")), url('image/background.png') no-repeat";
     }
     // Nevigation & TopButton
     if(window.pageYOffset >= header){
@@ -24,13 +24,17 @@ window.onscroll = function(){
 }
 
 // Nevigation menu click event
+let count = 0;
 var nevi_buttonArr = document.querySelectorAll('#Nevigation .menu button');
 var menu_btn = document.querySelector('#Nevigation .menu_btn');
 var menu = document.querySelector('#Nevigation .menu');
 for(let i=0; i<nevi_buttonArr.length; i++){
     nevi_buttonArr[i].addEventListener('click',()=>{
         document.getElementById('title'+(i+1)).scrollIntoView(true);
-        if(window.innerWidth <= 900) menu.style.display="none";
+        if(window.innerWidth <= 900){
+            menu.style.display="none";
+            count=0;
+        }
     });
 }
 
@@ -47,9 +51,9 @@ top_btn.addEventListener('click',()=>{
 });
 
 // Nevigation menu (small window size)
-let count = 0;
 menu_btn.addEventListener('click',()=>{
     if(count == 0){
+        document.querySelector('footer').style.opacity=1;
         menu.style.display="block";
         nevigation.style.background="rgb(196,150,188)";
         count++;
@@ -58,6 +62,7 @@ menu_btn.addEventListener('click',()=>{
         if(window.pageYOffset == 0 ){
             nevigation.style.background="none";
         }
+        document.querySelector('footer').style.opacity=0.9;
         menu.style.display="none";
         count=0;
     }
