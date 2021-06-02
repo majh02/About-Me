@@ -218,51 +218,49 @@ header{
 .info{
   margin: $padding $side-padding;
   margin-left: $side-padding*2;
-  text-align: center;
-  line-height: 3;
+  line-height: 2;
+  table{
+    width: 100%;
+  }
+  tr{
+    display: flex;
+    border-bottom: 1px solid $grey-light-color;
+  }
+  th{
+    padding: $padding 0;
+  }
   .info_title{
-    flex: 1 1 25%;
-    padding-right: $padding;
-    text-align: left;
+    flex: 1 1 30%;
+    text-align: start;
     border-right: 1px solid $grey-light-color;
   }
   .item{
-    flex: 1 1 75%;
+    flex: 1 1 70%;
+    text-align: center;
+    font-weight: normal;
   }
-  .birth{
-    display: flex;
-    height: $side-padding/(1.5);
-  }
-  .univ{
-    display: flex;
-    height: $side-padding*1.2;
-    line-height: 1.5;
-    .item img{
-      width: $img-size;
-      height: $img-size;
-      border-radius: 50%;
-    }
+  img{
+    width: $img-size;
+    height: $img-size;
+    border-radius: 50%;
   }
   .contact{
-    display: flex;
-    line-height: 3;
-    .item{
-      li a{
-        color:$black-color;
-        text-decoration: none;
-      }
-      #email:hover{
-        text-decoration: underline;
-        color: blue;
-      }
-      #instagram:hover{
-        text-decoration: underline;
-        color: blue;
-      }
-      #git:hover{
-        text-decoration: underline;
-        color: blue;
-      }
+    border: none;
+    a{
+      color:$black-color;
+      text-decoration: none;
+    }
+    #email:hover{
+      text-decoration: underline;
+      color: blue;
+    }
+    #instagram:hover{
+      text-decoration: underline;
+      color: blue;
+    }
+    #git:hover{
+      text-decoration: underline;
+      color: blue;
     }
   }
 }
@@ -385,7 +383,7 @@ header{
     }
   }
   .clicked{
-    animation: downup 1s ease;
+    animation: downup 1s ease-out;
   }
   .button button:hover{
     border: 2px solid $grey-light-color;
@@ -480,7 +478,6 @@ footer{
 }
 
 @media screen and (max-width:900px){
-
   // Nevigation
   #Nevigation{
     display: block;
@@ -538,9 +535,19 @@ footer{
   // Info
   .info{
     margin: $padding $padding;
-    margin-left: $padding*2;
+    tr{
+      flex-direction: column;
+    }
+    th{
+      padding: $padding/2 0;
+    }
+    .info_title{
+      border: none;
+      text-align: center;
+      font-size: $font-large;
+    }
     .univ {
-      height: $side-padding*2;
+      line-height: 2;
       .item{
         white-space: pre-line;
       }
@@ -600,7 +607,7 @@ footer{
   }
   // Footer
   footer{
-    h1, h3{
+    h1, h2{
       margin: 0 $padding;
     }
     div{
@@ -632,6 +639,6 @@ footer{
 
 // Project downup animation
 @keyframes downup{
-  0% {margin-top: 3%;}
+  0% {margin-top: 5%;}
   50% {margin-top: 0%;}
 }

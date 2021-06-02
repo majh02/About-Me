@@ -225,69 +225,66 @@ header i {
 .info {
   margin: 20px 120px;
   margin-left: 240px;
-  text-align: center;
-  line-height: 3;
+  line-height: 2;
+}
+
+.info table {
+  width: 100%;
+}
+
+.info tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.info th {
+  padding: 20px 0;
 }
 
 .info .info_title {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 25%;
-          flex: 1 1 25%;
-  padding-right: 20px;
-  text-align: left;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+  text-align: start;
   border-right: 1px solid #e0e0e0;
 }
 
 .info .item {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 75%;
-          flex: 1 1 75%;
+      -ms-flex: 1 1 70%;
+          flex: 1 1 70%;
+  text-align: center;
+  font-weight: normal;
 }
 
-.info .birth {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-}
-
-.info .univ {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 144px;
-  line-height: 1.5;
-}
-
-.info .univ .item img {
+.info img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
 
 .info .contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  line-height: 3;
+  border: none;
 }
 
-.info .contact .item li a {
+.info .contact a {
   color: #000000;
   text-decoration: none;
 }
 
-.info .contact .item #email:hover {
+.info .contact #email:hover {
   text-decoration: underline;
   color: blue;
 }
 
-.info .contact .item #instagram:hover {
+.info .contact #instagram:hover {
   text-decoration: underline;
   color: blue;
 }
 
-.info .contact .item #git:hover {
+.info .contact #git:hover {
   text-decoration: underline;
   color: blue;
 }
@@ -434,8 +431,8 @@ header i {
 }
 
 .project .clicked {
-  -webkit-animation: downup 1s ease;
-          animation: downup 1s ease;
+  -webkit-animation: downup 1s ease-out;
+          animation: downup 1s ease-out;
 }
 
 .project .button button:hover {
@@ -611,10 +608,23 @@ footer p {
   }
   .info {
     margin: 20px 20px;
-    margin-left: 40px;
+  }
+  .info tr {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .info th {
+    padding: 10px 0;
+  }
+  .info .info_title {
+    border: none;
+    text-align: center;
+    font-size: 20px;
   }
   .info .univ {
-    height: 240px;
+    line-height: 2;
   }
   .info .univ .item {
     white-space: pre-line;
@@ -686,7 +696,7 @@ footer p {
     width: auto;
     height: 150px;
   }
-  footer h1, footer h3 {
+  footer h1, footer h2 {
     margin: 0 20px;
   }
   footer div {
@@ -739,7 +749,7 @@ footer p {
 
 @-webkit-keyframes downup {
   0% {
-    margin-top: 3%;
+    margin-top: 5%;
   }
   50% {
     margin-top: 0%;
@@ -748,7 +758,7 @@ footer p {
 
 @keyframes downup {
   0% {
-    margin-top: 3%;
+    margin-top: 5%;
   }
   50% {
     margin-top: 0%;
