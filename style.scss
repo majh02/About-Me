@@ -46,8 +46,8 @@ body{
   margin: 0 0;
   font-family: 'NEXON Lv1 Gothic OTF';
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-  background-image: url('image/background.jpg');
-  background-repeat: no-repeat;
+  background-image: url('image/background.png');
+  // background-repeat: no-repeat;
   background-attachment: fixed !important;
   background-size: 100% !important;
   background-position: left top !important;
@@ -217,49 +217,36 @@ header{
 // Info
 .info{
   margin: $padding $side-padding;
-  margin-left: $side-padding*2.5;
+  margin-left: $side-padding*2;
   text-align: center;
   line-height: 3;
+  .info_title{
+    flex: 1 1 25%;
+    padding-right: $padding;
+    text-align: left;
+    border-right: 1px solid $grey-light-color;
+  }
+  .item{
+    flex: 1 1 75%;
+  }
   .birth{
     display: flex;
     height: $side-padding/(1.5);
-    span{
-      flex: 1 1 20%;
-      text-align: left;
-      border-right: 1px solid $grey-light-color;
-    }
-    .item{
-      flex: 1 1 80%;
-    }
   }
   .univ{
     display: flex;
     height: $side-padding*1.2;
     line-height: 1.5;
-    span{
-      flex: 1 1 20%;
-      text-align: left;
-      border-right: 1px solid $grey-light-color;
-    }
-    .item{
-      flex: 1 1 80%;
-      img{
-        width: $img-size;
-        height: $img-size;
-        border-radius: 50%;
-      }
+    .item img{
+      width: $img-size;
+      height: $img-size;
+      border-radius: 50%;
     }
   }
   .contact{
     display: flex;
     line-height: 3;
-    span{
-      flex: 1 1 20%;
-      text-align: left;
-      border-right: 1px solid $grey-light-color;
-    }
     .item{
-      flex: 1 1 80%;
       li a{
         color:$black-color;
         text-decoration: none;
@@ -472,7 +459,7 @@ footer{
   padding-top: 4%;
   margin-top: $side-padding/2;
   text-align: center;
-  background-image: url('image/background.jpg');
+  background-image: url('image/background.png');
   line-height: 2;
   opacity: 0.8;
   div{
@@ -554,6 +541,7 @@ footer{
   // Info
   .info{
     margin: $padding $padding;
+    margin-left: $padding*2;
     .univ {
       height: $side-padding*2;
       .item{
@@ -589,7 +577,7 @@ footer{
       }
     }
     .next_btn{
-      visibility: hidden;
+      display: none;
     }
     .item{
       display: block;
@@ -606,7 +594,23 @@ footer{
       }
       button{
         padding: 0 $padding;
+        img{
+          width: auto;
+          height: $img-size*1.5;
+        }
       }
+    }
+  }
+  // Footer
+  footer{
+    h1, h3{
+      margin: 0 $padding;
+    }
+    div{
+      line-height: 7;
+    }
+    i{
+      padding: 0 $padding;
     }
   }
 }

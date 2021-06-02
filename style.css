@@ -23,8 +23,7 @@ body {
   font-family: 'NEXON Lv1 Gothic OTF';
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-  background-image: url("image/background.jpg");
-  background-repeat: no-repeat;
+  background-image: url("image/background.png");
   background-attachment: fixed !important;
   background-size: 100% !important;
   background-position: left top !important;
@@ -224,9 +223,24 @@ header i {
 
 .info {
   margin: 20px 120px;
-  margin-left: 300px;
+  margin-left: 240px;
   text-align: center;
   line-height: 3;
+}
+
+.info .info_title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  padding-right: 20px;
+  text-align: left;
+  border-right: 1px solid #e0e0e0;
+}
+
+.info .item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 75%;
+          flex: 1 1 75%;
 }
 
 .info .birth {
@@ -236,40 +250,12 @@ header i {
   height: 80px;
 }
 
-.info .birth span {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 20%;
-          flex: 1 1 20%;
-  text-align: left;
-  border-right: 1px solid #e0e0e0;
-}
-
-.info .birth .item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 80%;
-          flex: 1 1 80%;
-}
-
 .info .univ {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 144px;
   line-height: 1.5;
-}
-
-.info .univ span {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 20%;
-          flex: 1 1 20%;
-  text-align: left;
-  border-right: 1px solid #e0e0e0;
-}
-
-.info .univ .item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 80%;
-          flex: 1 1 80%;
 }
 
 .info .univ .item img {
@@ -283,20 +269,6 @@ header i {
   display: -ms-flexbox;
   display: flex;
   line-height: 3;
-}
-
-.info .contact span {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 20%;
-          flex: 1 1 20%;
-  text-align: left;
-  border-right: 1px solid #e0e0e0;
-}
-
-.info .contact .item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 80%;
-          flex: 1 1 80%;
 }
 
 .info .contact .item li a {
@@ -555,7 +527,7 @@ footer {
   padding-top: 4%;
   margin-top: 60px;
   text-align: center;
-  background-image: url("image/background.jpg");
+  background-image: url("image/background.png");
   line-height: 2;
   opacity: 0.8;
 }
@@ -641,6 +613,7 @@ footer p {
   }
   .info {
     margin: 20px 20px;
+    margin-left: 40px;
   }
   .info .univ {
     height: 240px;
@@ -682,7 +655,7 @@ footer p {
     margin: 10px 20px;
   }
   .project .next_btn {
-    visibility: hidden;
+    display: none;
   }
   .project .item {
     display: block;
@@ -709,6 +682,19 @@ footer p {
     text-align: center;
   }
   .project .item button {
+    padding: 0 20px;
+  }
+  .project .item button img {
+    width: auto;
+    height: 150px;
+  }
+  footer h1, footer h3 {
+    margin: 0 20px;
+  }
+  footer div {
+    line-height: 7;
+  }
+  footer i {
     padding: 0 20px;
   }
 }

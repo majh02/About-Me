@@ -10,7 +10,7 @@ window.onscroll = function(){
     // Page Fadeout
     if (window.pageYOffset > 0) {
         var opac = (window.pageYOffset / nystories);
-        document.body.style.background = "linear-gradient(rgba(255, 255, 255, " + opac + "), rgba(255, 255, 255, " + opac + ")), url('image/background.jpg') no-repeat";
+        document.body.style.background = "linear-gradient(rgba(255, 255, 255, " + opac + "), rgba(255, 255, 255, " + opac + ")), url('image/background.png')";
     }
     // Nevigation & TopButton
     if(window.pageYOffset >= header){
